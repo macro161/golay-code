@@ -1,0 +1,11 @@
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\bin\Debug\netcoreapp2.0\GolayCode.deps.json
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\bin\Debug\netcoreapp2.0\GolayCode.runtimeconfig.json
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\bin\Debug\netcoreapp2.0\GolayCode.runtimeconfig.dev.json
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\bin\Debug\netcoreapp2.0\GolayCode.dll
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\bin\Debug\netcoreapp2.0\GolayCode.pdb
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.csprojResolveAssemblyReference.cache
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.csproj.CoreCompileInputs.cache
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.AssemblyInfoInputs.cache
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.AssemblyInfo.cs
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.dll
+C:\Users\normie\Documents\GitHub\golay-code\GolayCode\GolayCode\obj\Debug\netcoreapp2.0\GolayCode.pdb
