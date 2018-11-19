@@ -23,10 +23,6 @@ public class Coding {
         int[] encodedMessage = new int[]{ 1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0}/*encode(information)*/;
         Utilities.moduloArray(encodedMessage);
         Utilities.displayArray(encodedMessage);
-        encodedMessage[0] = 0;
-        encodedMessage[1] = 0;
-        encodedMessage[3] = 0;
-        encodedMessage[23] = 1;
         System.out.println("");
 
         System.out.println("Sindromas");
@@ -71,16 +67,19 @@ public class Coding {
         int[] intElements = Arrays.asList(elements).stream().mapToInt(Integer::parseInt).toArray();
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 12; j++) {
-                H[i][j] = B[i][j];
-            }
-
-        }
-        for (int i = 12; i < 24; i++) {
-            for (int j = 0; j < 12; j++) {
                 H[i][j] = intElements[j];
             }
 
             shiftRight(intElements);
+        }
+
+        int x = 0;
+        for (int i = 12; i < 24; i++) {
+            for (int j = 0; j < 12; j++) {
+                H[i][j] = B[x][j];
+            }
+            x++;
+
         }
         Utilities.displayMatrix(H);
 

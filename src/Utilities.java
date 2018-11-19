@@ -56,8 +56,10 @@ public class Utilities {
             for (int j = 0; j < 24; j++) {
 
                 int test = message[j] * HMatrix[j][i];
+                System.out.println(message[j] + " * " + HMatrix[j][i]);
                 s[i] += test;
             }
+            System.out.println("//////////////////////");
         }
         return s;
     }
