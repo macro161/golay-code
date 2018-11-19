@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/Main.java" line="18" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Coding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities.java" afterDir="false" />
-    </list>
+    <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +16,7 @@
     <session id="1750439333">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
@@ -81,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Coding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+            <state relative-caret-position="291">
+              <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createBMatrix#0;class#Coding#0" />
@@ -216,13 +213,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48987207" visible="true" weight="0.37418655" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48987207" weight="0.37418655" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.67324096" weight="0.40238613" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5101279" side_tool="true" visible="true" weight="0.37418655" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5101279" side_tool="true" visible="true" weight="0.40238613" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49733475" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -304,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Coding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="31" lean-forward="true" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        <state relative-caret-position="291">
+          <caret line="23" column="46" lean-forward="true" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createBMatrix#0;class#Coding#0" />
