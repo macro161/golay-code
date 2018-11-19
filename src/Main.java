@@ -12,7 +12,7 @@ public class Main {
         //int [] info = {1,2,3};
         //int [][] gm = {{4,5,6},{7,8,9},{10,11,12}};
 
-       // Utilities.displayMatrix(gm);
+        // Utilities.displayMatrix(gm);
 
         //int [] res = Utilities.matrixMultiplication(info,gm);
 
@@ -28,7 +28,7 @@ public class Main {
         Scanner reader = new Scanner(System.in);
         int n;
 
-        while(true) {
+        while (true) {
             n = reader.nextInt();
             switch (n) {
                 case 1:
@@ -49,4 +49,3 @@ public class Main {
         }
     }
 }
- 00111
