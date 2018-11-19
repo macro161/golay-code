@@ -11,6 +11,12 @@ public class Utilities {
         }
     }
 
+    static void displayArray(int[] array){
+        for(int i = 0;i < array.length; i++){
+            System.out.print(array[i] + " ");
+        }
+    }
+
     static int[][] generateRandomMatrix(int x, int y)
     {
         Random rand = new Random();
@@ -22,5 +28,19 @@ public class Utilities {
     }
 
         return matrix;
+    }
+
+    static int [] matrixMultiplication(int [] information, int[][] gMatrix){
+
+        int[] result = new int[24];
+
+        for(int i = 0; i < 24; i++){
+            for(int j = 0; j < 12;j++ ){
+                int test = information[j] * gMatrix[j][i];
+                result[i] += test;
+            }
+        }
+
+        return result;
     }
 }
