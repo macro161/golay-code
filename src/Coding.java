@@ -6,6 +6,7 @@ public class Coding {
     int[][] B = new int[12][12];
     int[][] G = new int[12][24];
     int[][] H = new int[24][12];
+    //int[][] Bh = new int[12][12];
 
     public void SendInformation(String information) {
 
@@ -13,24 +14,150 @@ public class Coding {
         System.out.println("B matrix");
         createBMatrix();
 
+       // System.out.printf("Bh matrix");
+        //createBhMatrix();
+
         System.out.println("G matrix");
         createGMatrix();
 
         System.out.println("H matrix");
         createHMatrix();
 
+
+
         System.out.println("Encoded message");
-        int[] encodedMessage = new int[]{ 1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0}/*encode(information)*/;
+        //int[] information = new int[]{0,0,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0};
+       // int[] encodedMessage = new int[]{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; example 1
+          //int[] encodedMessage = new int[]{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; esample 2
+         // int[] encodedMessage = new int[]{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0};
+        //int[] encodedMessage = new int[]{1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0};
+        int[] encodedMessage = encode("101011010111101010010101");
+            encodedMessage[0]= 1;
+
+
         Utilities.moduloArray(encodedMessage);
         Utilities.displayArray(encodedMessage);
         System.out.println("");
 
+
+
+        //if(Utilities.vectorWeight(encodedMessage)%2 ==0){
+        //    encodedMessage[23] = 1;
+       // }
+
+       // Utilities.displayArray(encodedMessage);
+
+
+        int[] u = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////
+        //Part 1
         System.out.println("Sindromas");
         int[] synd = Utilities.firstSyndrom(H, encodedMessage);
         Utilities.moduloArray(synd);
         Utilities.displayArray(synd);
+        ////////////////////////////////////////////////////////////////////////
+        //Part 2
+        if(Utilities.vectorWeight(synd) <= 3)
+        {
+            for(int i = 0; i < 12;i++){
+                u[i] = synd[i];
+            }
+
+            Utilities.displayArray(u);
+            Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+        }
+        ////////////////////////////////////////////////////////////////////////
+        //Part 3
+        for(int i = 0; i < B.length; i++) {
+            if (Utilities.vectorWeight(Utilities.addVectors(synd, Utilities.getRowFromMatrix(B, i))) <= 2) {
+                int[] u1 = Utilities.addVectors(synd, Utilities.getRowFromMatrix(B, i));
+                for (int j = 0; j < 12; j++) {
+                    u[j] = u1[j];
+                }
+                u[11 + i] = 1;
+                break;
+            }
+        }
+
+
+        System.out.println("negras");
+        Utilities.moduloArray(u);
+        Utilities.displayArray(u);
+        Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+
+        ////////////////////////////////////////////////////////////////////////
+        //Part 4
+
+        int [] syndTwo = Utilities.secondSyndrom(synd,B);
+        System.out.println("antras sindromas");
+        Utilities.displayArray(Utilities.moduloArray(syndTwo));
+        ////////////////////////////////////////////////////////////////////////
+        //Part 5
+        if(Utilities.vectorWeight(syndTwo) <=3){
+            for(int i =12; i < u.length; i++){
+                u[i] = syndTwo[i-12];
+            }
+        }
+        System.out.println("Galas");
+
+        Utilities.displayArray(u);
+        //Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+        ////////////////////////////////////////////////////////////////////////
+        //Part 6
+
+        for(int i = 0; i < B.length; i++){
+            int[] row = Utilities.getRowFromMatrix(B,i);
+            int[] syndrow =Utilities.moduloArray(Utilities.addVectors(syndTwo,row));
+
+            if(Utilities.vectorWeight(syndrow) <= 2){
+                u[i] = 1;
+                for(int j = 12; j< 24; j++){
+                    u[j] = syndrow[j-12];
+                }
+                break;
+            }
+
+        }
+        Utilities.displayArray(u);
+        System.out.println("virsus");
+        Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+
+        ////////////////////////////////////////////////////////////////////////
+        //Part 7
+        ////////////////////////////////////////////////////////////////////////
+
+
 
     }
+
+
+  /*  public void createBhMatrix(){
+        String vector = "11011100010";
+        String[] elements = vector.split("");
+        int[] intElements = Arrays.asList(elements).stream().mapToInt(Integer::parseInt).toArray();
+
+
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 11; j++) {
+                Bh[i][j] = intElements[j];
+            }
+            Bh[i][11]=1;
+            shiftLeft(intElements);
+        }
+
+        for (int i = 0; i < 11; i++) {
+            Bh[11][i] = 1;
+        }
+
+        Bh[11][11]=0;
+
+        Utilities.displayMatrix(Bh);
+        System.out.println("");
+    }*/
 
 
     public void createBMatrix() {
@@ -45,7 +172,7 @@ public class Coding {
             for (int j = 0; j < 11; j++) {
                 B[i][j] = intElements[j];
             }
-            B[i][11] = 1;
+            B[i][11]=1;
             shiftLeft(intElements);
         }
 
@@ -53,7 +180,7 @@ public class Coding {
             B[11][i] = 1;
         }
 
-        B[11][11] = 0;
+        B[11][11]=0;
 
         Utilities.displayMatrix(B);
         System.out.println("");
@@ -90,6 +217,7 @@ public class Coding {
         String vector = "100000000000";
         String[] elements = vector.split("");
         int[] intElements = Arrays.asList(elements).stream().mapToInt(Integer::parseInt).toArray();
+
         for (int i = 0; i < 12; i++) {
 
             for (int j = 0; j < 12; j++) {
@@ -97,11 +225,11 @@ public class Coding {
             }
             shiftRight(intElements);
 
-            int x = 0;
+
 
             for (int k = 12; k < 24; k++) {
-                G[i][k] = B[i][x];
-                x++;
+                G[i][k] = B[i][k-12];
+
             }
 
         }
@@ -139,8 +267,6 @@ public class Coding {
 
 
         return Utilities.matrixMultiplication(intElements, G);
-
-
     }
 
 

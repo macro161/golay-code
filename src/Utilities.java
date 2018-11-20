@@ -11,7 +11,37 @@ public class Utilities {
         }
     }
 
+    static int[]  addVectors(int a[], int b[]){
+
+        int size = a.length;
+
+        if(a.length > b.length){
+            size = b.length;
+        }
+
+        int[] result = new int[size];
+        for(int i=0;i < size;i++){
+            result[i] += a[i];
+            result[i] += b[i];
+        }
+        return result;
+    }
+
+    static int[] getRowFromMatrix(int a[][], int row)
+    {
+        int[] result = new int[a[1].length];
+
+        for(int i = 0; i < result.length;i++)
+        {
+            result[i] = a[row][i];
+        }
+
+
+        return result;
+    }
+
     static void displayArray(int[] array) {
+        System.out.println("");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] /*% 2*/ + " ");
         }
@@ -56,12 +86,38 @@ public class Utilities {
             for (int j = 0; j < 24; j++) {
 
                 int test = message[j] * HMatrix[j][i];
-                System.out.println(message[j] + " * " + HMatrix[j][i]);
+                //System.out.println(message[j] + " * " + HMatrix[j][i]);
                 s[i] += test;
             }
-            System.out.println("//////////////////////");
+           // System.out.println("//////////////////////");
         }
         return s;
+    }
+
+    static int[] secondSyndrom (int[] syndrom, int[][]BMatrix){
+        int[] syndtwo = new int[12];
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 12; j++) {
+
+                int test = syndrom[j] * BMatrix[j][i];
+                //System.out.println(message[j] + " * " + HMatrix[j][i]);
+                syndtwo[i] += test;
+            }
+            // System.out.println("//////////////////////");
+        }
+        return syndtwo;
+    }
+
+    static int vectorWeight(int [] vector)
+    {
+        int result = 0;
+
+        for(int i = 0;i < vector.length; i++){
+            if(vector[i] == 1) {
+                result++;
+            }
+        }
+        return result;
     }
 
 

@@ -18,6 +18,8 @@ public class Main {
 
         //Utilities.displayArray(res);
 
+        System.out.printf("binaras"  +Integer.toBinaryString(15));
+
 
         System.out.println("Hello World!");
         System.out.println("1. Siusti vektoriu");
