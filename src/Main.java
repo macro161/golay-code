@@ -18,11 +18,7 @@ public class Main {
 
         //decoding.decode(code);
 
-
         Scanner reader = new Scanner(System.in);
-
-
-
 
         while(run){
             System.out.printf("Iveskite pasirinkima");

@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/Coding.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/golay-code/Coding.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/FiniteBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/InputConversion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/golay-code/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/MatrixMath.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/PolinomialMath.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/golay-code/Utilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Decoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Decoding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FiniteBody.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputConversion.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MatrixMath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PolinomialMath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="323">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -77,9 +61,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="68">
+              <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
               <folding>
+                <element signature="method#multiplyMatrix#0;class#Utilities#0" />
                 <element signature="method#displayMatrix#0;class#Utilities#0" />
                 <element signature="method#addVectors#0;class#Utilities#0" />
                 <element signature="method#getRowFromMatrix#0;class#Utilities#0" />
@@ -97,13 +82,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Decoding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
+            <state relative-caret-position="36">
               <caret line="75" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Coding.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
@@ -177,7 +162,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542834005551" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542834125410" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -343,11 +328,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="68">
+          <caret line="4" column="56" selection-start-line="4" selection-start-column="56" selection-end-line="4" selection-end-column="56" />
           <folding>
+            <element signature="method#multiplyMatrix#0;class#Utilities#0" />
             <element signature="method#displayMatrix#0;class#Utilities#0" />
             <element signature="method#addVectors#0;class#Utilities#0" />
             <element signature="method#getRowFromMatrix#0;class#Utilities#0" />
@@ -361,24 +354,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Coding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Decoding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
+        <state relative-caret-position="36">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Coding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
         </state>
       </provider>
     </entry>
