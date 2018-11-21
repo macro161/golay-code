@@ -1,6 +1,35 @@
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Utilities {
+
+    static int[][] multiplyMatrix(int[][] A, int[][] B) {
+
+        int aRows = A.length;
+        int aColumns = A[0].length;
+        int bRows = B.length;
+        int bColumns = B[0].length;
+
+        if (aColumns != bRows) {
+            throw new IllegalArgumentException("A:Rows: " + aColumns + " did not match B:Columns " + bRows + ".");
+        }
+
+        int[][] C = new int[aRows][bColumns];
+        for (int i = 0; i < aRows; i++) {
+            for (int j = 0; j < bColumns; j++) {
+                C[i][j] = 0;
+            }
+        }
+
+        for (int i = 0; i < aRows; i++) { // aRow
+            for (int j = 0; j < bColumns; j++) { // bColumn
+                for (int k = 0; k < aColumns; k++) { // aColumn
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+
+        return C;
+    }
 
     static void displayMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
@@ -11,7 +40,7 @@ public class Utilities {
         }
     }
 
-    static int[]  addVectors(int a[], int b[]){
+    static int[] addVectors(int a[], int b[]){
 
         int size = a.length;
 
@@ -27,8 +56,7 @@ public class Utilities {
         return result;
     }
 
-    static int[] getRowFromMatrix(int a[][], int row)
-    {
+    static int[] getRowFromMatrix(int a[][], int row) {
         int[] result = new int[a[1].length];
 
         for(int i = 0; i < result.length;i++)
@@ -45,84 +73,16 @@ public class Utilities {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] /*% 2*/ + " ");
         }
+        System.out.println(" ");
     }
 
-    static int[] moduloArray(int[] array) {
+    static void moduloArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = array[i] % 2;
         }
-        return array;
     }
 
-    static int[][] generateRandomMatrix(int x, int y) {
-        Random rand = new Random();
-        int[][] matrix = new int[x][y];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = (int) Math.round(Math.random());
-            }
-        }
-        return matrix;
-    }
-
-    static int[] matrixMultiplication(int[] information, int[][] gMatrix) {
-
-        int[] result = new int[24];
-
-        for (int i = 0; i < 24; i++) {
-            for (int j = 0; j < 12; j++) {
-                int test = information[j] * gMatrix[j][i];
-                result[i] += test;
-            }
-        }
-        return result;
-    }
-
-    static int[] matrixMultiplicationh(int[] information, int[][] gMatrix) {
-
-        int[] result = new int[24];
-
-        for (int i = 0; i < 23; i++) {
-            for (int j = 0; j < 12; j++) {
-                int test = information[j] * gMatrix[j][i];
-                result[i] += test;
-            }
-        }
-        return result;
-    }
-
-    static int[] firstSyndrom(int[][] HMatrix, int[] message) {
-
-        int[] s = new int[12];
-
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 24; j++) {
-
-                int test = message[j] * HMatrix[j][i];
-                //System.out.println(message[j] + " * " + HMatrix[j][i]);
-                s[i] += test;
-            }
-           // System.out.println("//////////////////////");
-        }
-        return s;
-    }
-
-    static int[] secondSyndrom (int[] syndrom, int[][]BMatrix){
-        int[] syndtwo = new int[12];
-        for (int i = 0; i < 12; i++) {
-            for (int j = 0; j < 12; j++) {
-
-                int test = syndrom[j] * BMatrix[j][i];
-                //System.out.println(message[j] + " * " + HMatrix[j][i]);
-                syndtwo[i] += test;
-            }
-            // System.out.println("//////////////////////");
-        }
-        return syndtwo;
-    }
-
-    static int vectorWeight(int [] vector)
-    {
+    static int vectorWeight(int [] vector) {
         int result = 0;
 
         for(int i = 0;i < vector.length; i++){
@@ -131,6 +91,33 @@ public class Utilities {
             }
         }
         return result;
+    }
+
+    static int [][] multiDimension(int [] numbers){
+        int result[][] = new int[1][numbers.length];
+        for(int i = 0 ; i < numbers.length;i++){
+            result[0][i] = numbers[i];
+        }
+        return result;
+    }
+
+    static int [] oneDimension(int [][] numbers){
+        ArrayList<Integer> numbers1Dim = new ArrayList<Integer>();
+
+        for (int i = 0; i < numbers.length; i++)
+        {
+            for (int x = 0; x < numbers[i].length; x++)
+            {
+                numbers1Dim.add(numbers[i][x]);
+            }
+        }
+
+        int[] ret = new int[numbers1Dim.size()];
+        for (int i=0; i < ret.length; i++)
+        {
+            ret[i] = numbers1Dim.get(i).intValue();
+        }
+        return ret;
     }
 
 

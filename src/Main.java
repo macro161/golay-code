@@ -5,49 +5,46 @@ public class Main {
     public static void main(String[] args) {
 
         Coding coding = new Coding();
+        Channel channel = new Channel();
+        Decoding decoding = new Decoding();
 
-        //int [][] matrix = Utilities.generateRandomMatrix(12,12);
-        //Utilities.displayMatrix(matrix);
+        boolean run = true;
 
-        //int [] info = {1,2,3};
-        //int [][] gm = {{4,5,6},{7,8,9},{10,11,12}};
+        //Utilities.displayArray(coding.codeInformation("101101100101"));                   // result 1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0
+        //decoding.decode(new int []{1,1,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0});     // result 1 0 0 0 0 0 0 0 0 0 0 1
+        //decoding.decode(new int []{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0});     // result 1 1 0 0 0 1 0 0 1 0 0 1
+        //decoding.decode(new int []{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0});     // result 1 1 1 0 0 1 1 1 1 1 0 1
+        //int [] code = coding.codeInformation("101101100101"); //1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0
 
-        // Utilities.displayMatrix(gm);
+        //decoding.decode(code);
 
-        //int [] res = Utilities.matrixMultiplication(info,gm);
-
-        //Utilities.displayArray(res);
-
-        System.out.printf("binaras"  +Integer.toBinaryString(15));
-
-
-        System.out.println("Hello World!");
-        System.out.println("1. Siusti vektoriu");
-        System.out.println("2. Siusti teksta");
-        System.out.println("3. Siusti paveiksleli");
-        System.out.print("Jusu pasirinkimas: ");
 
         Scanner reader = new Scanner(System.in);
-        int n;
 
-        while (true) {
-            n = reader.nextInt();
-            switch (n) {
+
+
+
+        while(run){
+            System.out.printf("Iveskite pasirinkima");
+            int n = reader.nextInt();
+            switch (n){
                 case 1:
-                    String vector;
-                    Scanner sc = new Scanner(System.in);
-                    System.out.println("Iveskite norima vektoriu");
-                    //vector = sc.nextLine();
-                    coding.SendInformation("110101001010");
-
+                    System.out.println("Siusti vektoriu");
                     break;
                 case 2:
+                    System.out.println("Siusti teksta");
                     break;
                 case 3:
+                    System.out.println("Siusti paveiksliuka");
+                    break;
+                case 4:
+                    System.out.println("Baigti darba");
                     break;
                 default:
-                    System.out.println("Neteisinga ivestis, bandykite is naujo");
+                    System.out.println("Neteisingas pasirinkimas");
             }
         }
+        System.out.printf("Programa baigia darba");
+        reader.close();
     }
 }
