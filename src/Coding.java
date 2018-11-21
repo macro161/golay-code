@@ -6,7 +6,8 @@ public class Coding {
     int[][] B = new int[12][12];
     int[][] G = new int[12][24];
     int[][] H = new int[24][12];
-    //int[][] Bh = new int[12][12];
+    int[][] Bh = new int[12][11];
+    int[][] Gh = new int[12][23];
 
     public void SendInformation(String information) {
 
@@ -14,8 +15,8 @@ public class Coding {
         System.out.println("B matrix");
         createBMatrix();
 
-       // System.out.printf("Bh matrix");
-        //createBhMatrix();
+        System.out.println("Bh matrix");
+        createBhMatrix();
 
         System.out.println("G matrix");
         createGMatrix();
@@ -23,21 +24,48 @@ public class Coding {
         System.out.println("H matrix");
         createHMatrix();
 
+        System.out.println("Gh matrix");
+        createGhMatrix();
 
+        test();
 
         System.out.println("Encoded message");
         //int[] information = new int[]{0,0,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0};
-       // int[] encodedMessage = new int[]{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; example 1
+        //int[] encodedMessage = new int[]{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; //exp 1
           //int[] encodedMessage = new int[]{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; esample 2
          // int[] encodedMessage = new int[]{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0};
-        //int[] encodedMessage = new int[]{1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0};
-        int[] encodedMessage = encode("101011010111101010010101");
-            encodedMessage[0]= 1;
+        //int[] encodedMessage = new int[]{1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0}; //exp 2
+        //int[] encodedMessage = encode("101110101011");
+            //encodedMessage[0]= 0;
 
+         //int [] encodedMessage = new int []{1,0,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0}; //Example 1
+        // int [] encodedMessage = new int []{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0}; //Example 2
+        // int [] encodedMessage = new int []{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0}; //Example 3
+        // int [] encodedMessage = new int []{0,0,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0}; //Golay Example
 
-        Utilities.moduloArray(encodedMessage);
+        int [] encodedMessage = encodeh("101101110101");
+        //int [] encodedMessage = encode("101101110101");
+        encodedMessage = Utilities.moduloArray(encodedMessage);
         Utilities.displayArray(encodedMessage);
-        System.out.println("");
+        //encodedMessage[0] = 0;
+        //encodedMessage[4] = 1;
+        //encodedMessage[5] = 0;
+        //Utilities.displayArray(Utilities.moduloArray(encodedMessage));
+        if(Utilities.vectorWeight(encodedMessage) % 2 == 0){
+            encodedMessage[23] = 1;
+        }
+
+        //encodedMessage[23] = 1;
+
+        //Utilities.displayArray(encodedMessage);
+        //encodedMessage[0] = 0;
+        //encodedMessage[1] = 1;
+        //encodedMessage[2] = 0;
+        //encodedMessage[3] = 0;
+       // encodedMessage[2] = 0;
+        //encodedMessage[5] = 0;
+        //System.out.println("");
+        Utilities.displayArray(encodedMessage);
 
 
 
@@ -55,10 +83,10 @@ public class Coding {
 
         ////////////////////////////////////////////////////////////////////////
         //Part 1
-        System.out.println("Sindromas");
+        //System.out.println("Sindromas");
         int[] synd = Utilities.firstSyndrom(H, encodedMessage);
         Utilities.moduloArray(synd);
-        Utilities.displayArray(synd);
+        //Utilities.displayArray(synd);
         ////////////////////////////////////////////////////////////////////////
         //Part 2
         if(Utilities.vectorWeight(synd) <= 3)
@@ -67,8 +95,11 @@ public class Coding {
                 u[i] = synd[i];
             }
 
-            Utilities.displayArray(u);
+            u = Utilities.moduloArray(u);
+
+            //Utilities.displayArray(u);
             Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+            ending();
         }
         ////////////////////////////////////////////////////////////////////////
         //Part 3
@@ -84,17 +115,18 @@ public class Coding {
         }
 
 
-        System.out.println("negras");
-        Utilities.moduloArray(u);
-        Utilities.displayArray(u);
+        //System.out.println("negras");
+        u = Utilities.moduloArray(u);
+        //Utilities.displayArray(u);
         Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+        ending();
 
         ////////////////////////////////////////////////////////////////////////
         //Part 4
 
         int [] syndTwo = Utilities.secondSyndrom(synd,B);
-        System.out.println("antras sindromas");
-        Utilities.displayArray(Utilities.moduloArray(syndTwo));
+        //System.out.println("antras sindromas");
+        //Utilities.displayArray(Utilities.moduloArray(syndTwo));
         ////////////////////////////////////////////////////////////////////////
         //Part 5
         if(Utilities.vectorWeight(syndTwo) <=3){
@@ -102,10 +134,13 @@ public class Coding {
                 u[i] = syndTwo[i-12];
             }
         }
-        System.out.println("Galas");
 
-        Utilities.displayArray(u);
-        //Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+        u = Utilities.moduloArray(u);
+        //System.out.println("Galas");
+
+        //Utilities.displayArray(u);
+        Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
+        ending();
         ////////////////////////////////////////////////////////////////////////
         //Part 6
 
@@ -122,10 +157,11 @@ public class Coding {
             }
 
         }
-        Utilities.displayArray(u);
-        System.out.println("virsus");
+        u = Utilities.moduloArray(u);
+        //System.out.println("virsus");
+        int [] finalResult = Utilities.addVectors(encodedMessage,u);
         Utilities.displayArray(Utilities.moduloArray(Utilities.addVectors(encodedMessage,u)));
-
+        ending();
         ////////////////////////////////////////////////////////////////////////
         //Part 7
         ////////////////////////////////////////////////////////////////////////
@@ -134,8 +170,37 @@ public class Coding {
 
     }
 
+    public void ending(){
+        System.out.println("Cia baigiasi mato kancios");
+    }
 
-  /*  public void createBhMatrix(){
+    public void createGhMatrix(){
+        String vector = "100000000000";
+        String[] elements = vector.split("");
+        int[] intElements = Arrays.asList(elements).stream().mapToInt(Integer::parseInt).toArray();
+
+        for (int i = 0; i < 12; i++) {
+
+            for (int j = 0; j < 12; j++) {
+                Gh[i][j] = intElements[j];
+            }
+            shiftRight(intElements);
+
+
+
+            for (int k = 12; k < 23; k++) {
+                Gh[i][k] = Bh[i][k-12];
+
+            }
+
+        }
+
+        //Utilities.displayMatrix(Gh);
+
+        System.out.println("");
+    }
+
+    public void createBhMatrix(){
         String vector = "11011100010";
         String[] elements = vector.split("");
         int[] intElements = Arrays.asList(elements).stream().mapToInt(Integer::parseInt).toArray();
@@ -145,20 +210,19 @@ public class Coding {
             for (int j = 0; j < 11; j++) {
                 Bh[i][j] = intElements[j];
             }
-            Bh[i][11]=1;
+
             shiftLeft(intElements);
         }
 
-        for (int i = 0; i < 11; i++) {
+        for(int i = 0;i < 11;i++){
             Bh[11][i] = 1;
         }
 
-        Bh[11][11]=0;
 
-        Utilities.displayMatrix(Bh);
+
+        //Utilities.displayMatrix(Bh);
         System.out.println("");
-    }*/
-
+    }
 
     public void createBMatrix() {
 
@@ -208,7 +272,7 @@ public class Coding {
             x++;
 
         }
-        Utilities.displayMatrix(H);
+       // Utilities.displayMatrix(H);
 
         System.out.println("");
     }
@@ -234,7 +298,7 @@ public class Coding {
 
         }
 
-        Utilities.displayMatrix(G);
+       // Utilities.displayMatrix(G);
 
         System.out.println("");
 
@@ -267,6 +331,25 @@ public class Coding {
 
 
         return Utilities.matrixMultiplication(intElements, G);
+    }
+
+    public int[] encodeh(String information){
+        String[] informationArray = information.split("");
+        int[] intElements = Arrays.asList(informationArray).stream().mapToInt(Integer::parseInt).toArray();
+
+        return Utilities.matrixMultiplicationh(intElements, Gh);
+    }
+
+    public void test(){
+        /*System.out.println("Testas prasideda cia");
+        int [] encodedmessage = encodeh("101110101011");
+        Utilities.displayArray(Utilities.moduloArray(encodedmessage));
+        if(Utilities.vectorWeight(encodedmessage) % 2 == 0){
+            encodedmessage[23] = 1;
+        }
+
+        System.out.println("svoris " + Utilities.vectorWeight(encodedmessage));
+        System.out.println("Testas baigiasi cia");*/
     }
 
 

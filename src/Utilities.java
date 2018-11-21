@@ -78,6 +78,19 @@ public class Utilities {
         return result;
     }
 
+    static int[] matrixMultiplicationh(int[] information, int[][] gMatrix) {
+
+        int[] result = new int[24];
+
+        for (int i = 0; i < 23; i++) {
+            for (int j = 0; j < 12; j++) {
+                int test = information[j] * gMatrix[j][i];
+                result[i] += test;
+            }
+        }
+        return result;
+    }
+
     static int[] firstSyndrom(int[][] HMatrix, int[] message) {
 
         int[] s = new int[12];
