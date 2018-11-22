@@ -120,5 +120,10 @@ public class Utilities {
         return ret;
     }
 
-
+    static void copyArray(int [] firstArray, int [] secondArray ){
+        for(int i = 0; i < secondArray.length;i++)
+        {
+            firstArray[i] = secondArray[i];
+        }
+    }
 }
