@@ -72,8 +72,11 @@ public class GolayCode {
             finalVector[23] = 1;
         }
         channel.chanell(finalVector);
-        boolean decoded = decoding.decode(finalVector);
-        if(decoded){
+        finalVector = decoding.decode(finalVector);
+
+        System.out.println("cia" + finalVector);
+
+        if(finalVector != null){
             Utilities.displayOriginalMessage(finalVector);
         }
 
