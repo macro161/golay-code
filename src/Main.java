@@ -16,23 +16,34 @@ public class Main {
         //decoding.decode(new int []{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0});     // result 1 1 1 0 0 1 1 1 1 1 0 1
         //int [] code = coding.codeInformation("101101100101"); //1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0
         //int [] code = coding.codeInformationPerfect("101101100101");
-          decoding.decode(new int []{0,0,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0});
+          //decoding.decode(new int []{0,0,1,0,0,1,0,0,1,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0});
         //decoding.decode(code);
 
         Scanner reader = new Scanner(System.in);
 
         while(run){
             System.out.printf("Iveskite pasirinkima");
+            System.out.println("1. Siusti vektoriu");
+            System.out.println("2. Siusti teksta");
+            System.out.println("3. Siusti paveiksliuka");
             int n = reader.nextInt();
             switch (n){
                 case 1:
-                    System.out.println("Siusti vektoriu");
+                    System.out.print("Iveskite vektoriu: ");
+                    String vector = reader.nextLine();
+                    if (vector.matches("^[01]+$")) {
+                        System.out.print("Jusu vektorius: " + vector);
+                        System.out.println();
+                    }else{
+                        System.out.println("Blogai ivedete vektoriu");
+                    }
+
                     break;
                 case 2:
-                    System.out.println("Siusti teksta");
+
                     break;
                 case 3:
-                    System.out.println("Siusti paveiksliuka");
+
                     break;
                 case 4:
                     System.out.println("Baigti darba");
@@ -43,5 +54,9 @@ public class Main {
         }
         System.out.printf("Programa baigia darba");
         reader.close();
+
+
     }
+
+
 }
