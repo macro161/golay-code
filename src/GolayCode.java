@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class GolayCode {
@@ -8,7 +10,7 @@ public class GolayCode {
 
 
     public void program() {
-        //Utilities.displayArray(coding.codeInformation("101101100101"));                   // result 1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0
+        //Utilities.displayArray(coding.codeInformationPerfect("101101100101"));                   // result 1 0 1 1 0 1 1 0 0 1 0 1 1 0 0 1 1 0 1 0 1 0 0 0
         //decoding.decode(new int []{1,1,1,1,1,1,1,0,1,1,1,1,0,1,0,0,1,0,0,1,0,0,1,0}); // result 1 0 0 0 0 0 0 0 0 0 0 1
         //decoding.decode(new int []{0,0,1,0,0,1,0,0,1,1,0,1,1,0,1,0,0,0,1,0,1,0,0,0});     // result 1 1 0 0 0 1 0 0 1 0 0 1
         //decoding.decode(new int []{0,0,0,1,1,1,0,0,0,1,1,1,0,1,1,0,1,1,0,1,0,0,0,0});     // result 1 1 1 0 0 1 1 1 1 1 0 1
@@ -22,7 +24,7 @@ public class GolayCode {
         Scanner reader = new Scanner(System.in);
 
         while (run) {
-            System.out.println("Iveskite pasirinkima");
+            System.out.println("\nIveskite pasirinkima");
             System.out.println("1. Siusti vektoriu");
             System.out.println("2. Siusti teksta");
             System.out.println("3. Siusti paveiksliuka");
@@ -32,10 +34,10 @@ public class GolayCode {
                     sendVector();
                     break;
                 case 2:
-
+                    sendText();
                     break;
                 case 3:
-
+                    sendImage();
                     break;
                 case 4:
                     System.out.println("Baigti darba");
@@ -62,7 +64,19 @@ public class GolayCode {
         System.out.print("Jusu uzkuoduota zinute: ");
         Utilities.displayArray(encodedMessage);
         changeCode(encodedMessage);
-        passThroughChannel(encodedMessage);
+
+        int [] finalVector = new int[24];
+        Utilities.copyArray(finalVector,encodedMessage);
+
+        if(Utilities.vectorWeight(finalVector) % 2 == 0){
+            finalVector[23] = 1;
+        }
+        channel.chanell(finalVector);
+        boolean decoded = decoding.decode(finalVector);
+        if(decoded){
+            Utilities.displayOriginalMessage(finalVector);
+        }
+
     }
 
     public void changeCode(int[] code) {
@@ -89,11 +103,40 @@ public class GolayCode {
 
     }
 
-    public void passThroughChannel(int [] encodedMessage){
-
-    }
-
     public void sendText() {
+        System.out.println("Koki zodi norite siusti?");
+        Scanner read = new Scanner(System.in);
+        String word = read.nextLine();
+
+        char[] letters = word.toCharArray();
+        int [] encodedLetters = new int[word.length()];
+        char [] decodedLetters = new char[word.length()];
+
+        for(int i = 0; i < word.length() ;i++){
+            int ascii = (int) letters[i];
+            System.out.println(ascii);
+            System.out.println(Integer.toBinaryString(ascii));
+            int [] encodedLetter = coding.codeInformationPerfect("00000"+Integer.toBinaryString(ascii));
+            channel.chanell(encodedLetter);
+            int [] finalVector = new int[24];
+            Utilities.copyArray(finalVector,encodedLetter);
+
+            if(Utilities.vectorWeight(finalVector) % 2 == 0){
+                finalVector[23] = 1;
+            }
+            decoding.decode(finalVector);
+            int parseInt = Integer.parseInt(UtilitiesArrays.toString(finalVector), 2);
+            char c = (char)parseInt;
+            decodedLetters[i] = c;
+
+        }
+
+        for(int i = 0; i < decodedLetters.length;i++)
+        {
+            System.out.print(decodedLetters[i]);
+        }
+
+
     }
 
     public void sendImage() {

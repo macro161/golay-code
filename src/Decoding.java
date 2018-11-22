@@ -1,5 +1,5 @@
 public class Decoding {
-    public int[] decode(int[] code) {
+    public boolean decode(int[] code) {
         System.out.print("Gautas kodas");
         Utilities.displayArray(code);
 
@@ -104,7 +104,7 @@ public class Decoding {
             System.out.println("Dekoduoti nepavyko");
         }
         ////////////////////////////////////////////////////////////////////////
-        return decodedMessage;
+        return decoded;
     }
 }
 

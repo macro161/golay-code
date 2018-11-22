@@ -138,4 +138,21 @@ public class Utilities {
             System.out.println("Ivedete bloga pozicija");
         }
     }
+
+    static void displayOriginalMessage(int [] vector){
+
+        System.out.println("Pradine zinute");
+        for(int i = 0; i < 12; i++){
+            System.out.print(vector[i]);
+        }
+    }
+
+    static String takeBegining(int [] vector){
+        String begining = "";
+        for(int i = 0;i < 12; i++)
+        {
+            begining += Integer.toString(vector[0]);
+        }
+        return begining;
+    }
 }
