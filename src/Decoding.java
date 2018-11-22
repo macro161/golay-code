@@ -1,12 +1,13 @@
 public class Decoding {
-    public int [] decode(int [] code){
+    public int[] decode(int[] code) {
         System.out.print("Gautas kodas");
         Utilities.displayArray(code);
 
-        int[] decodedMessage = new int [12];
-        int[] u = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+        int[] decodedMessage = null;
+        int[] u = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        boolean decoded = false;
 
-        for(int h = 0; h < 2; h++) {
+        for (int h = 0; h < 2; h++) {
             ////////////////////////////////////////////////////////////////////////
             //Part 1
             int[] syndromOne = Utilities.oneDimension(Utilities.multiplyMatrix(Utilities.multiDimension(code), Matrix.H));
@@ -15,14 +16,17 @@ public class Decoding {
             Utilities.displayArray(syndromOne);
             ////////////////////////////////////////////////////////////////////////
             //Part 2
+
             if (Utilities.vectorWeight(syndromOne) <= 3) {
                 for (int i = 0; i < 12; i++) {
                     u[i] = syndromOne[i];
                 }
                 System.out.print("Klaidu struktura: ");
                 Utilities.displayArray(u);
+                decoded = true;
                 break;
             }
+
             ////////////////////////////////////////////////////////////////////////
             //Part 3
             boolean partThree = false;
@@ -36,10 +40,11 @@ public class Decoding {
                     }
                     u[12 + i] = 1;
                     partThree = true;
+                    decoded = true;
                     break;
                 }
             }
-            if(partThree) {
+            if (partThree) {
                 System.out.print("Klaidu struktura: ");
                 Utilities.moduloArray(u);
                 Utilities.displayArray(u);
@@ -60,6 +65,7 @@ public class Decoding {
                 System.out.print("Klaidu struktura: ");
                 Utilities.moduloArray(u);
                 Utilities.displayArray(u);
+                decoded = true;
                 break;
             }
             ////////////////////////////////////////////////////////////////////////
@@ -76,10 +82,11 @@ public class Decoding {
                         u[j] = syndromRow[j - 12];
                     }
                     partSix = true;
+                    decoded = true;
                     break;
                 }
             }
-            if(partSix){
+            if (partSix) {
                 System.out.print("Klaidu struktura:");
                 Utilities.moduloArray(u);
                 Utilities.displayArray(u);
@@ -88,11 +95,16 @@ public class Decoding {
             break;
         }
 
-        int [] finalResult = Utilities.addVectors(code,u);
-        Utilities.moduloArray(finalResult);
-        System.out.print("Issiustas vektorius: ");
-        Utilities.displayArray(finalResult);
+        if (decoded) {
+            decodedMessage = Utilities.addVectors(code, u);
+            Utilities.moduloArray(decodedMessage);
+            System.out.print("Issiustas vektorius: ");
+            Utilities.displayArray(decodedMessage);
+        } else {
+            System.out.println("Dekoduoti nepavyko");
+        }
         ////////////////////////////////////////////////////////////////////////
         return decodedMessage;
     }
 }
+

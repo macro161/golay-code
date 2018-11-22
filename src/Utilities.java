@@ -126,4 +126,16 @@ public class Utilities {
             firstArray[i] = secondArray[i];
         }
     }
+
+    static void flipBit(int [] vector, int position){
+        if(position < vector.length){
+            if(vector[position-1] == 1){
+                vector[position-1] = 0;
+            }else{
+                vector[position-1] = 1;
+            }
+        }else{
+            System.out.println("Ivedete bloga pozicija");
+        }
+    }
 }
