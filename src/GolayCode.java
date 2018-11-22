@@ -125,7 +125,7 @@ public class GolayCode {
                 finalVector[23] = 1;
             }
             decoding.decode(finalVector);
-            int parseInt = Integer.parseInt(UtilitiesArrays.toString(finalVector), 2);
+            int parseInt = Integer.parseInt(Arrays.toString(finalVector), 2);
             char c = (char)parseInt;
             decodedLetters[i] = c;
 
