@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Decoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Decoding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GolayCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GolayCode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -51,6 +50,7 @@
     <session id="1788289217">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -130,10 +130,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GolayCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+            <state relative-caret-position="164">
+              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#sendVector#0;class#GolayCode#0" />
                 <element signature="method#changeCode#0;class#GolayCode#0" />
                 <element signature="method#sendImage#0;class#GolayCode#0" />
               </folding>
@@ -219,7 +220,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542893554731" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542895295674" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -285,7 +286,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48880598" visible="true" weight="0.3716312" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48880598" weight="0.3716312" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6727079" weight="0.5035461" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -315,12 +316,6 @@
           <line>31</line>
           <properties />
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GolayCode.java</url>
-          <line>63</line>
-          <properties />
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -390,10 +385,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GolayCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="73" column="37" lean-forward="true" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+        <state relative-caret-position="164">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#sendVector#0;class#GolayCode#0" />
             <element signature="method#changeCode#0;class#GolayCode#0" />
             <element signature="method#sendImage#0;class#GolayCode#0" />
           </folding>
