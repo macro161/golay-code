@@ -1,0 +1,84 @@
+\documentclass[oneside]{VUMIFPSkursinis}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{ltablex}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage{pbox}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\theenumiii}
+\renewcommand{\theenumiii}{\theenumii\arabic{enumiii}.}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage[%
+	colorlinks=true,
+	linkcolor=black
+]{hyperref}
+\university{Vilniaus universitetas}
+\faculty{Matematikos ir informatikos fakultetas}
+\department{Programų sistemų katedra}
+\papertype{Kodavimo teorija}
+\title{Golay kodas}
+\titleineng{Golay code}
+\status{3 kursas}
+\author{Matas Savickis}
+
+
+\supervisor{Gintaras Skersys, Asist., Dr.}
+\date{Vilnius – \the\year}
+
+\bibliography{bibliografija}
+
+\begin{document}
+\maketitle
+
+\sectionnonum{Anotacija}
+Šio darbo tikslas yra teorines kodavimo teorijos žinias pritaikyti praktiškai įgyvendinant Golay C23 kodą. Darbe įgyvendintas vektoriaus ir teksto užkodavimas, siuntimas nepatikimu kanalu ir dekodavimas. 
+
+\begin{itemize}
+	\item{Greta Pyrantaitė - greta.pyrantaite@gmail.com}
+	\item{Matas Savickis - savickis.matas@gmail.com}
+	\item{Andrius Bentkus - andrius.bentkus@gmail.com}
+\end{itemize}
+
+\tableofcontents
+
+\section{Kaip paleisti programa?}
+\begin{enumerate}
+	\item{1. Atsidaryti komandinę eilutę(CMD)}
+	\item{2. Nueiti iki ,,src" aplankalo pateikto zip faile}
+	\item{3. Komandinej eilutėj parašyti - javac Main.java}
+	\item{4. Komandinėj eilutėj parašyti - java Main}
+\end{enumerate}
+\section{Pradinių tekstų failai}
+\begin{itemize}
+	\item{Main.java - Programos įeities taškas}
+	\item{Coding.java - Klasė kurioje atliekamas vektoriaus užkodavimas}
+	\item{Matrix.java - Klasė kurioje saugomos inicializuotos matricos naudojamos programoje}
+	\item{Channel.java - Klasė kuri naudojama iškraipyti vektorių}
+	\item{Decoding.java - Klasė kurioje yra įgyvendintas dekodavimas}
+	\item{GolayCode.java - Klasė kurioje įgyvendintas funkcionalumų pasirinkimas, vektorių įvedimas, formatavimas ir kviečiamos kitos klasės dirbančios su vektoriumi}
+	\item{Utilities.java - Klasė kurioje laikomi pagalbiniai metodai skirti darbui(matricu daugyba, vektoriu atvaizdavimas ir tvarkymas ir t.t.)}
+\end{itemize}
+\section{Vartotojo sąsaja}
+
+\section{Programiniai sprendimai}
+\section{Atlikti eksperimentai}
+\section{Naudota literatura}
+	Klaidas taisančių kodų teorija Paskaitų konspektai - Gintaras Skersys
+
+
+
+\end{document}

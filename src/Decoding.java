@@ -1,5 +1,5 @@
 public class Decoding {
-    public int[] decode(int[] code) {
+    public int[] decode(int[] code) { //Metodas skitas dekoduoti vektoriu. Parametrai uzkoduotas skaiciu masyvas, grazina atkoduota skaiciu masyva
         System.out.print("Gautas kodas");
         Utilities.displayArray(code);
 
@@ -8,6 +8,7 @@ public class Decoding {
         boolean decoded = false;
 
         for (int h = 0; h < 2; h++) {
+            //Pradedamas vykdyti dekodavimo algoritmas
             ////////////////////////////////////////////////////////////////////////
             //Part 1
             int[] syndromOne = Utilities.oneDimension(Utilities.multiplyMatrix(Utilities.multiDimension(code), Matrix.H));
@@ -96,7 +97,7 @@ public class Decoding {
         }
 
         if (decoded) {
-            decodedMessage = Utilities.addVectors(code, u);
+            decodedMessage = Utilities.addVectors(code, u); // Sudedam klaidos vektoriu su gautu kodu
             Utilities.moduloArray(decodedMessage);
             System.out.print("Issiustas vektorius: ");
             Utilities.displayArray(decodedMessage);
