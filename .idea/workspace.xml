@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/GolayCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/golay-code/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/golay-code/Utilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Channel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Decoding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Decoding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GolayCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GolayCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilities.java" afterDir="false" />
-    </list>
+    <list default="true" id="fcb10323-8e9f-46d3-aa53-e18c02ee185b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +13,9 @@
     <session id="1750439333">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.37" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
@@ -33,7 +23,7 @@
           <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.65" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="527">
               <caret line="168" selection-start-line="168" selection-end-line="168" />
               <folding>
                 <element signature="method#multiplyMatrix#0;class#Utilities#0" />
@@ -246,7 +236,7 @@
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119804405" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.121026896" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -350,9 +340,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GolayCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="527">
           <caret line="168" selection-start-line="168" selection-end-line="168" />
           <folding>
             <element signature="method#multiplyMatrix#0;class#Utilities#0" />
@@ -370,13 +367,6 @@
             <element signature="method#convertToStringArray#0;class#Utilities#0" />
             <element signature="method#nullVector#0;class#Utilities#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GolayCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="80" column="49" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
         </state>
       </provider>
     </entry>
