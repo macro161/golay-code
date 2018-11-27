@@ -67,7 +67,6 @@ public class GolayCode {
 
         System.out.print("Jusu uzkuoduota zinute: ");
         Utilities.displayArray(encodedMessage);
-        changeCode(encodedMessage); // Pakeiciami jo bitai pagal poreiki
 
         int[] finalVector = new int[24];
         Utilities.copyArray(finalVector, encodedMessage);
@@ -81,6 +80,9 @@ public class GolayCode {
         float errorPossibility = read.nextFloat();
 
         channel.chanell(finalVector, errorPossibility); // Perleidziama per nepatikima kanala
+
+        changeCode(finalVector); // Pakeiciami jo bitai pagal poreiki
+
         finalVector = decoding.decode(finalVector); // Dekoduojame vektoriu
 
         if (finalVector != null) {
@@ -115,7 +117,7 @@ public class GolayCode {
     public void sendText() {    //Teksto siuntimui skitas metodas
         System.out.println("Koki zodi norite siusti?");
         Scanner read = new Scanner(System.in);
-        String word = read.nextLine(); // Ivedamas zmotis kuri norime siusti
+        String word = read.nextLine(); // Ivedamas zodis kuri norime siusti
         char[] letters = word.toCharArray(); // Isskaidome ji i char'u masyva
         int[] ascii = new int[letters.length];
         String[] information = new String[ascii.length];
